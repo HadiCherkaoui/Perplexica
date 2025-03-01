@@ -368,7 +368,7 @@ const loadMessages = async (
 
 const ChatWindow = ({ id }: { id?: string }) => {
   const searchParams = useSearchParams();
-  const initialMessage = searchParams.get('q');
+  const initialMessage = searchParams?.get('q') || '';
 
   const [chatId, setChatId] = useState<string | undefined>(id);
   const [newChatCreated, setNewChatCreated] = useState(false);

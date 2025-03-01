@@ -4,15 +4,19 @@ import {
   getAvailableEmbeddingModelProviders,
 } from '../lib/providers';
 import {
-  getGroqApiKey,
-  getOllamaApiEndpoint,
   getAnthropicApiKey,
+  getCustomOpenaiApiKey,
+  getCustomOpenaiApiUrl,
+  getCustomOpenaiModelName,
   getGeminiApiKey,
+  getGroqApiKey,
+  getKeyCloakClientId,
+  getKeyCloakClientSecret,
+  getKeyCloakRealm,
+  getKeyCloakUrl,
+  getOllamaApiEndpoint,
   getOpenaiApiKey,
   updateConfig,
-  getCustomOpenaiApiUrl,
-  getCustomOpenaiApiKey,
-  getCustomOpenaiModelName,
 } from '../config';
 import logger from '../utils/logger';
 
@@ -51,6 +55,13 @@ router.get('/', async (_, res) => {
         };
       });
     }
+
+    config['keycloak'] = {
+      url: getKeyCloakUrl(),
+      realm: getKeyCloakRealm(),
+      client_id: getKeyCloakClientId(),
+      client_secret: getKeyCloakClientSecret(),
+    };
 
     config['openaiApiKey'] = getOpenaiApiKey();
     config['ollamaApiUrl'] = getOllamaApiEndpoint();

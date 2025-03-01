@@ -1,11 +1,16 @@
 'use client';
 
-import { Settings as SettingsIcon, ArrowLeft, Loader2 } from 'lucide-react';
+import {
+  ArrowLeft,
+  ImagesIcon,
+  Loader2,
+  Settings as SettingsIcon,
+  VideoIcon,
+} from 'lucide-react';
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
 import { Switch } from '@headlessui/react';
 import ThemeSwitcher from '@/components/theme/Switcher';
-import { ImagesIcon, VideoIcon } from 'lucide-react';
 import Link from 'next/link';
 
 interface SettingsType {

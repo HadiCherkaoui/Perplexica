@@ -9,10 +9,15 @@ IMAGE = "searxng"
 VIDEO = "searxng"
 NEWS = "searxng"
 
-[KEYCLOAK]
+[OAUTH.KEYCLOAK]
 URL = ""
 REALM = ""
 CLIENT_ID = ""
+CLIENT_SECRET = ""
+
+[OAUTH.DISCORD]
+CLIENT_ID = ""
+CLIENT_SECRET = ""
 
 [MODELS.OPENAI]
 API_KEY = ""

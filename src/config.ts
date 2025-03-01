@@ -15,11 +15,12 @@ interface Config {
     IMAGE: string;
     VIDEO: string;
     NEWS: string;
-  }
+  };
   KEYCLOAK: {
     URL: string;
     REALM: string;
     CLIENT_ID: string;
+    CLIENT_SECRET: string;
   };
   MODELS: {
     OPENAI: {
@@ -108,7 +109,8 @@ export const getBraveApiKey = () => loadConfig().SEARCH_ENGINES.BRAVE.API_KEY;
 export const getBingSubscriptionKey = () =>
   loadConfig().SEARCH_ENGINES.BING.SUBSCRIPTION_KEY;
 
-export const getYacyJsonEndpoint = () => loadConfig().SEARCH_ENGINES.YACY.ENDPOINT;
+export const getYacyJsonEndpoint = () =>
+  loadConfig().SEARCH_ENGINES.YACY.ENDPOINT;
 
 export const getSearxngApiEndpoint = () =>
   process.env.SEARXNG_API_URL || loadConfig().SEARCH_ENGINES.SEARXNG.ENDPOINT;
@@ -129,6 +131,9 @@ export const getKeyCloakUrl = () => loadConfig().KEYCLOAK.URL;
 export const getKeyCloakRealm = () => loadConfig().KEYCLOAK.REALM;
 
 export const getKeyCloakClientId = () => loadConfig().KEYCLOAK.CLIENT_ID;
+
+export const getKeyCloakClientSecret = () =>
+  loadConfig().KEYCLOAK.CLIENT_SECRET;
 
 const mergeConfigs = (current: any, update: any): any => {
   if (update === null || update === undefined) {
